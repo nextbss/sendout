@@ -1,8 +1,6 @@
 # Sendout
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sendout`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A ruby gem createb by [SmartTechys](http://www.smarttechys.co.ao) for the [SendOut](https://www.sendoutapp.com) API that allows your application to send text messages (Angolan and International).
 
 ## Installation
 
@@ -20,22 +18,63 @@ Or install it yourself as:
 
     $ gem install sendout
 
+## Setup
+
+- Make sure you've registed at [SendOut](https://www.sendoutapp.com) and have produced your token(api_token) and id(your registered phone number).
+- Setup your environments variables
+```ruby
+SO_API_ID=244911222333
+SO_API_TOKEN=your_api_token_obtained_from_control_panel_at_sendout
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+At the moment there's only two sendOut endpoints in production:
+
+- Check your balance
+- Send one or bulk message
+
+### Check your balance
+
+```ruby
+Sendout.check_balance
+
+# It will return a json
+
+{ 
+  "cliente": {
+     "saldo": "512"
+     "enviada": "203"
+  } 
+}
+```
+
+### Send one or bulk message
+
+```ruby
+Sendout.send_sms(num, msg)
+
+# The num has to be an array and the msg an string. This method will return a boolean
+```
+## Help and Docs
+
+- [SendOut](https://www.sendoutapp.com)
+- [RDoc](https://www.rubydoc.info/gems/0.0.1)
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+- You can fork it
+- bundle
+- bundle rake exec
+- Make your feature addition or fix a bug
+- Do not  mess with the rakefile version or history (do not submit version bump PLEASE or put it in a different commit so we can ignore it when pull)
+- Send us the pull request
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sendout. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/smaziano/sendout. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
