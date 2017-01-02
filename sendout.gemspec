@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A Ruby gem for SendOut API(https://www.sendoutapp.com) made by SmartTechys(http://smarttechys.co.ao).}
   spec.description   = %q{A ruby gem to connect your application with SendOut API to send text messages(Internacional) from Angola.}
-  spec.homepage      = "https://github.com/smaziano/sendout."
+  spec.homepage      = "https://github.com/smaziano/sendout"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
