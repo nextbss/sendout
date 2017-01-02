@@ -59,7 +59,7 @@ Sendout.send_sms(num, msg)
 ## Help and Docs
 
 - [SendOut](https://www.sendoutapp.com)
-- [RDoc](https://www.rubydoc.info/gems/0.0.1)
+- [RDoc](https://www.rubydoc.info/gems/0.1.0)
 
 ## Development
 
