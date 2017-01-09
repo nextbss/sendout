@@ -12,7 +12,7 @@ module Sendout
   end
   
   # send sms: dest is always an array of numbers and the message a string
-  def self.send_sms(numbers=[], message, debug = nil)
+  def self.send_sms(numbers=[], message, debug=[])
     # fields from API
     data = {"para" => numbers, "sms" => message, "debug" => debug}
 
