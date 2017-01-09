@@ -2,6 +2,10 @@
 
 A ruby gem createb by [SmartTechys](http://www.smarttechys.co.ao) for the [SendOut](https://www.sendoutapp.com) API that allows your application to send text messages (Angolan and International).
 
+## ATTENTION
+**API Version 1 - Gem sendout v0.1.1**
+**API Version 2 - Gem sendout v0.1.2**
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -42,24 +46,51 @@ Sendout.check_balance
 # It will return a json
 
 { 
-  "cliente": {
-     "saldo": "512"
-     "enviada": "203"
-  } 
+  "cliente": "2449XXXXXXXX"
+   "saldo": "512"
+   "enviadas": "203"
+   "contactos": "2"
+   "campanhas": "1"
 }
 ```
 
-### Send one or bulk message
+### Send one or bulk message - Production Environment
 
 ```ruby
 Sendout.send_sms(num, msg)
 
-# The num has to be an array and the msg an string. This method will return a boolean
+# The num has to be an array and the msg an string. This method will return an array of one or more JSON objects
 ```
+Response:
+```JSON
+[ 
+    { 
+        "id":"0800000018E1C4DA", 
+        "de":"2449XXXXXXX5", 
+        "para":"2449XXXXXXX0", 
+        "remetente":"SENDOUT", 
+        "caracteres":"24", 
+        "quantidade":"1", 
+        "data":"07-01-2017 18:59:37", 
+        "rede":"00000", 
+        "enviado":true, 
+        "estado":"Entregue" 
+    } 
+]
+```
+### Send one or bulk message - Test Environment
+You need to add a boolean value true to send as test; if nothing or false will send it to production
+
+```ruby
+Sendout.send_sms(num, true, msg)
+
+# The num has to be an array and the msg an string. This method will return an array of one or more JSON objects
+```
+
 ## Help and Docs
 
 - [SendOut](https://www.sendoutapp.com)
-- [RDoc](https://www.rubydoc.info/gems/0.1.0)
+- [RDoc](https://www.rubydoc.info/gems/0.1.2)
 
 ## Development
 
