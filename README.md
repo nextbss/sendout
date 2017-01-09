@@ -3,8 +3,8 @@
 A ruby gem createb by [SmartTechys](http://www.smarttechys.co.ao) for the [SendOut](https://www.sendoutapp.com) API that allows your application to send text messages (Angolan and International).
 
 ## ATTENTION
-**API Version 1 - Gem sendout v0.1.1**
-**API Version 2 - Gem sendout v0.1.2**
+* **API Version 1 - Gem sendout v0.1.1**
+* **API Version 2 - Gem sendout v0.1.2**
 
 ## Installation
 
