@@ -4,7 +4,7 @@ require 'json'
 
 module Sendout
   include HTTParty
-  base_uri "https://www.sendoutapp.com/api"
+  base_uri "https://www.sendoutapp.com/api/v2"
 
   # check account balance
   def self.check_balance
@@ -12,9 +12,9 @@ module Sendout
   end
   
   # send sms: dest is always an array of numbers and the message a string
-  def self.send_sms(numbers=[], message)
+  def self.send_sms(numbers=[], message, debug=false)
     # fields from API
-    data = {"para" => numbers, "sms" => message}
+    data = {"para" => numbers, "sms" => message, "debug" => debug}
 
     # merge the body content
     content = {}
