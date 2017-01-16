@@ -14,7 +14,7 @@ module Sendout
   # send sms: dest is always an array of numbers and the message a string
   def self.send_sms(numbers=[], debug={}, message)
     # fields from API
-    if debug == false || debug == nil
+    if debug == false
       data = {"para" => numbers, "sms" => message}
     else
       data = {"para" => numbers, "sms" => message, "debug" => debug}
