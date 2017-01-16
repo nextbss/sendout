@@ -45,7 +45,7 @@ Sendout.check_balance
 
 # It will return a json
 
-{ 
+{
   "cliente": "2449XXXXXXXX"
    "saldo": "512"
    "enviadas": "203"
@@ -59,23 +59,23 @@ Sendout.check_balance
 ```ruby
 Sendout.send_sms(num, msg)
 
-# The num has to be an array and the msg an string. This method will return an array of one or more JSON objects
+# The num has to be an array and the msg an string. This method will return an array of one or more JSON objects.
 ```
 Response:
 ```JSON
-[ 
-    { 
-        "id":"0800000018E1C4DA", 
-        "de":"2449XXXXXXX5", 
-        "para":"2449XXXXXXX0", 
-        "remetente":"SENDOUT", 
-        "caracteres":"24", 
-        "quantidade":"1", 
-        "data":"07-01-2017 18:59:37", 
-        "rede":"00000", 
-        "enviado":true, 
-        "estado":"Entregue" 
-    } 
+[
+    {
+        "id":"0800000018E1C4DA",
+        "de":"2449XXXXXXX5",
+        "para":"2449XXXXXXX0",
+        "remetente":"SENDOUT",
+        "caracteres":"24",
+        "quantidade":"1",
+        "data":"07-01-2017 18:59:37",
+        "rede":"00000",
+        "enviado":true,
+        "estado":"Entregue"
+    }
 ]
 ```
 ### Send one or bulk message - Test Environment
