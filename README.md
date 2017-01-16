@@ -45,7 +45,7 @@ Sendout.check_balance
 
 # It will return a json
 
-{ 
+{
   "cliente": "2449XXXXXXXX"
    "saldo": "512"
    "enviadas": "203"
@@ -57,29 +57,29 @@ Sendout.check_balance
 ### Send one or bulk message - Production Environment
 
 ```ruby
-Sendout.send_sms(num, msg)
+Sendout.send_sms(num, false, msg)
 
-# The num has to be an array and the msg an string. This method will return an array of one or more JSON objects
+# The num has to be an array the debug a boolean, and the msg an string. This method will return an array of one or more JSON objects.
 ```
 Response:
 ```JSON
-[ 
-    { 
-        "id":"0800000018E1C4DA", 
-        "de":"2449XXXXXXX5", 
-        "para":"2449XXXXXXX0", 
-        "remetente":"SENDOUT", 
-        "caracteres":"24", 
-        "quantidade":"1", 
-        "data":"07-01-2017 18:59:37", 
-        "rede":"00000", 
-        "enviado":true, 
-        "estado":"Entregue" 
-    } 
+[
+    {
+        "id":"0800000018E1C4DA",
+        "de":"2449XXXXXXX5",
+        "para":"2449XXXXXXX0",
+        "remetente":"SENDOUT",
+        "caracteres":"24",
+        "quantidade":"1",
+        "data":"07-01-2017 18:59:37",
+        "rede":"00000",
+        "enviado":true,
+        "estado":"Entregue"
+    }
 ]
 ```
 ### Send one or bulk message - Test Environment
-You need to add a boolean value true to send as test; if nothing or false will send it to production
+You need to add a boolean value true to send as test; if false will send it to production
 
 ```ruby
 Sendout.send_sms(num, true, msg)
@@ -90,7 +90,7 @@ Sendout.send_sms(num, true, msg)
 ## Help and Docs
 
 - [SendOut](https://www.sendoutapp.com)
-- [RDoc](https://www.rubydoc.info/gems/0.1.2)
+- [RDoc](https://www.rubydoc.info/gems/0.1.3)
 
 ## Development
 
