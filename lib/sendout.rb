@@ -10,11 +10,15 @@ module Sendout
   def self.check_balance
    post("/saldo", {:body => authenticate.to_json, :headers => {'Content-Type' => 'application/json'}}).parsed_response
   end
-  
+
   # send sms: dest is always an array of numbers and the message a string
   def self.send_sms(numbers=[], debug, message)
     # fields from API
-    data = {"para" => numbers, "sms" => message, "debug" => debug}
+    if debug == false
+      data = {"para" => numbers, "sms" => message}
+    else
+      data = {"para" => numbers, "sms" => message, "debug" => debug}
+    end
 
     # merge the body content
     content = {}
